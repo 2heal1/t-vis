@@ -15,6 +15,22 @@ npm install --global t-vis
 
 For local development, run `npm run tvis --` from a clone of this repository.
 
+## First npm release
+
+The initial public npm release must be made locally before npm can bind this
+repository's GitHub Actions workflow as a trusted publisher. After logging in
+to the public npm registry, run the interactive bootstrap command:
+
+```bash
+npm login --registry=https://registry.npmjs.org
+npm run publish:bootstrap
+```
+
+The command checks and packs the project, asks for an OTP without echoing it,
+publishes the exact archive, verifies the published version, then configures
+OIDC trusted publishing for `2heal1/t-vis` and `release.yml`. Subsequent
+releases are published by pushing a matching `v*` Git tag.
+
 ## Start a shared session
 
 ```bash

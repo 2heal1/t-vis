@@ -16,6 +16,7 @@
     "start": "node server.mjs",
     "tvis": "node bin/tvis.mjs",
     "check": "node --check server.mjs && node --check public/app.js && node --check bin/tvis.mjs",
+    "publish:bootstrap": "./scripts/bootstrap-npm-release.sh",
     "prepublishOnly": "npm run check"
   },
   "engines": {
