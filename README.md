@@ -10,11 +10,10 @@ Prerequisites: Node.js 20+ and a current `codex` or `traecli` executable on
 `PATH`.
 
 ```bash
-npm link
+npm install --global t-vis
 ```
 
-`npm link` makes the local command available as `tvis`. During development you
-can use `npm run tvis --`.
+For local development, run `npm run tvis --` from a clone of this repository.
 
 ## Start a shared session
 
