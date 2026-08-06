@@ -10,7 +10,7 @@ Prerequisites: Node.js 20+ and a current `codex` or `traecli` executable on
 `PATH`.
 
 ```bash
-npm install --global @2heal1/t-vis
+npm install --global @2heal1/tvis
 ```
 
 For local development, run `npm run tvis --` from a clone of this repository.
