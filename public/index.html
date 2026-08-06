@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <title>t-vis — Reply review desk</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="masthead">
+        <a class="wordmark" href="/" aria-label="t-vis 首页">
+          <span class="wordmark-mark">↗</span>
+          <span>t-vis</span>
+        </a>
+        <p class="masthead-caption">自动显示当前会话；可在下方切换之前的会话。</p>
+        <div class="connection" data-connection>
+          <span class="status-light"></span>
+          <span data-connection-label>未连接</span>
+        </div>
+      </header>
+
+      <section class="session-bar" aria-label="会话控制">
+        <div class="session-field">
+          <label for="thread-id">会话</label>
+          <select id="thread-id" autocomplete="off" disabled>
+            <option value="">正在读取会话…</option>
+          </select>
+        </div>
+        <div class="session-actions">
+          <button class="button button-quiet" data-action="refresh-threads">刷新会话</button>
+        </div>
+      </section>
+
+      <section class="desk">
+        <article class="reply-sheet" aria-labelledby="reply-title">
+          <div class="sheet-header">
+            <div>
+              <p class="eyebrow">Assistant reply <span data-reply-index>—</span></p>
+              <h1 id="reply-title">回复</h1>
+            </div>
+          </div>
+          <div class="reply-content" data-reply-content tabindex="0">
+            <p class="empty-copy">没内容</p>
+          </div>
+        </article>
+
+        <aside class="margin-notes" aria-labelledby="notes-title">
+          <div class="notes-header">
+            <div>
+              <p class="eyebrow">Margin notes</p>
+              <h2 id="notes-title"><span data-note-count>0</span> 条待发送</h2>
+            </div>
+            <button class="text-button" data-action="clear-notes">清空</button>
+          </div>
+          <div class="note-list" data-note-list></div>
+          <form class="composer" data-composer>
+            <label for="freeform-question">补充说明 <span>可选</span></label>
+            <textarea id="freeform-question" rows="3" placeholder="例如：请按优先级给出下一步。"></textarea>
+            <button class="button button-send" type="submit" disabled data-send-button>
+              <span>发送到会话</span>
+              <kbd>⌘↵</kbd>
+            </button>
+          </form>
+        </aside>
+      </section>
+    </main>
+
+    <template id="note-template">
+      <article class="note-card">
+        <button class="note-remove" type="button" aria-label="删除此批注">×</button>
+        <p class="note-number"></p>
+        <blockquote></blockquote>
+        <label>想问什么？<textarea rows="3" placeholder="针对这一段继续提问…"></textarea></label>
+      </article>
+    </template>
+
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

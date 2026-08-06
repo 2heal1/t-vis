@@ -1,0 +1,17 @@
+{
+  "name": "t-vis",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "tvis": "./bin/tvis.mjs"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "tvis": "node bin/tvis.mjs",
+    "check": "node --check server.mjs && node --check public/app.js && node --check bin/tvis.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
