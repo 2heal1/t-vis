@@ -1,5 +1,5 @@
 {
-  "name": "t-vis",
+  "name": "@2heal1/t-vis",
   "version": "0.0.0",
   "description": "A localhost review desk for long Codex and Trae CLI replies.",
   "type": "module",
