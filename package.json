@@ -10,7 +10,7 @@
     "README.md"
   ],
   "bin": {
-    "tvis": "./bin/tvis.mjs"
+    "tvis": "bin/tvis.mjs"
   },
   "scripts": {
     "start": "node server.mjs",
